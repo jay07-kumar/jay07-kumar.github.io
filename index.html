@@ -3,36 +3,178 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description"
+content="Engineering Leader with 13+ years of experience in Product Development, Root Cause Analysis, Reliability Engineering and Industrial Gearbox Systems.">
 
-    <title>Jayakumar Nagaraj | Engineering Leader</title>
+    <title>Jayakumar Nagaraj | Engineering Leader | Product Development | RCA Specialist</title>
+    
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<i class="fa-solid fa-gears"></i>
+<i class="fa-solid fa-microchip"></i>
+<i class="fa-solid fa-car"></i>
+<i class="fa-solid fa-wind"></i>
+<i class="fa-solid fa-chart-line"></i>
+<i class="fa-solid fa-users"></i>
+<i class="fa-solid fa-award"></i>
+<i class="fa-solid fa-certificate"></i>
 </head>
+<link rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+</script>
+<div class="timeline-item left" data-aos="fade-right">
+</div>
+<div class="timeline-item right" data-aos="fade-left"></div>
+<script>
+
+const scrollBtn=document.getElementById("scrollTop");
+
+window.onscroll=function(){
+
+if(window.scrollY>300){
+
+scrollBtn.style.display="block";
+
+}
+
+else{
+
+scrollBtn.style.display="none";
+
+}
+
+};
+
+scrollBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+</script>
+<script>
+
+const counters=document.querySelectorAll(".counter");
+
+const animateCounter=(counter)=>{
+
+const target=+counter.getAttribute("data-target");
+
+let count=0;
+
+const increment=target/80;
+
+const update=()=>{
+
+count+=increment;
+
+if(count<target){
+
+counter.innerText=Math.ceil(count);
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText=target;
+
+if(target===13) counter.innerText="13+";
+if(target===100) counter.innerText="100+";
+
+}
+
+};
+
+update();
+
+};
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+animateCounter(entry.target);
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+});
+
+counters.forEach(counter=>{
+
+observer.observe(counter);
+
+});
+
+</script>
 <body>
 
 <header>
+
+    <header>
 
     <div class="logo">
         Jayakumar Nagaraj
     </div>
 
-    <nav>
+    <nav id="navbar">
 
-        <a href="#">Home</a>
+        <a href="#home">Home</a>
+
         <a href="#about">About</a>
-        <a href="#">Experience</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">Achievements</a>
-        <a href="#">Contact</a>
+
+        <a href="#journey">Journey</a>
+
+        <a href="#impact">Impact</a>
+
+        <a href="#expertise">Expertise</a>
+
+        <a href="#achievements">Achievements</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#case-studies">Projects</a>
+
+        <a href="#contact">Contact</a>
 
     </nav>
+
+    <div class="menu-toggle" id="menuToggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+</header>
 
 </header>
 
@@ -79,30 +221,7 @@
 
         </div>
 
-        <div class="stats">
-
-            <div>
-                <h3>13+</h3>
-                <span>Years Experience</span>
-            </div>
-
-            <div>
-                <h3>4</h3>
-                <span>Global Companies</span>
-            </div>
-
-            <div>
-                <h3>M.Tech</h3>
-                <span>BITS Pilani</span>
-            </div>
-
-            <div>
-                <h3>Technical Project Management</h3>
-                <span>Leadership</span>
-            </div>
-
-        </div>
-
+        
     </div>
 
     <div class="hero-image">
@@ -110,9 +229,52 @@
         <img src="profile.jpg"
             alt="Jayakumar Nagaraj">
 
+   
+
+    <!--================ STATS =================-->
+
+<section class="stats" id="stats">
+
+    <div class="stats-container">
+
+        <div class="stat-box">
+
+            <h2 class="counter" data-target="13">13+</h2>
+
+            <p>Years Experience</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h2 class="counter" data-target="4">4</h2>
+
+            <p>Global Companies</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h2 class="counter" data-target="3">3</h2>
+
+            <p>Industries</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h2 class="counter" data-target="100">100+</h2>
+
+            <p>Engineering Projects</p>
+
+        </div>
+
     </div>
 
 </section>
+
+</section>
+
 <!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
@@ -180,6 +342,1097 @@
     </div>
 
 </section>
+<!-- ================= PROFESSIONAL JOURNEY ================= -->
+
+<section class="journey" id="journey">
+
+    <div class="section-title">
+        <h5>CAREER TIMELINE</h5>
+        <h2>Professional Journey</h2>
+        <p>
+            13+ Years of Engineering Leadership, Product Development,
+            Reliability Engineering & Root Cause Analysis.
+        </p>
+    </div>
+    <div class="career-stats">
+
+    <div class="stat-card">
+        <h2>13+</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>4</h2>
+        <p>Global Companies</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>3</h2>
+        <p>Industries</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>100+</h2>
+        <p>Engineering Projects</p>
+    </div>
+
+</div>
+
+    <div class="timeline">
+
+        <!-- Ashok Leyland -->
+        <div class="timeline-item left">
+
+            <div class="timeline-content">
+
+                <span class="year">2026 – Present</span>
+
+                <div class="company-header">
+    <img src="assets/images/ashok-leyland.png" alt="Ashok Leyland Logo">
+    <h3>Ashok Leyland</h3>
+</div>
+
+                <h4>Manager – Drive Train Product Development</h4>
+
+                <p>
+                    Leading product development for commercial vehicle rear axles,
+                    technical problem solving, validation activities, customer issue
+                    resolution and engineering improvements.
+                </p>
+
+                <ul>
+                    <div class="tech-tags">
+                    <span>Product Development Leadership</span>
+                    <span> Root Cause Analysis</span>
+                    <span>Vehicle Validation</span>
+                    <span>Warranty Reduction</span>
+                    <span>Technical Reviews</span>
+                    </div>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Vestas -->
+
+        <div class="timeline-item right">
+
+            <div class="timeline-content">
+
+                <span class="year">2022 – 2025</span>
+
+                <div class="company-header">
+    <img src="assets/images/vestas.png" alt="vestas Logo">
+    <h3>vestas</h3>
+</div>
+
+                <h4>Technical Lead – Product Improvement</h4>
+
+                <p>
+
+                    Led global engineering initiatives to improve wind turbine
+                    reliability through product improvements and structured RCA.
+
+                </p>
+
+                <ul>
+                    <div class="tech-tags">
+
+                    <span> Fleet Root Cause Analysis</span>
+
+                    <span> Hydraulic Systems</span>
+
+                    <span> DFMEA</span>
+
+                    <span> Engineering Change Management</span>
+
+                    <span> Reliability Improvement</span>
+                    </div>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Flender -->
+
+        <div class="timeline-item left">
+
+            <div class="timeline-content">
+
+                <span class="year">2015 – 2022</span>
+
+                <div class="company-header">
+    <img src="assets/images/flender.png" alt="Flender Logo">
+    <h3>Flender</h3>
+</div>
+
+                <h4>Senior Design Engineer</h4>
+
+                <p>
+
+                    Designed and developed industrial gearbox solutions
+                    for global applications.
+
+                </p>
+
+                <ul>
+                    <div class="tech-tags">
+
+                    <span> Gearbox Design</span>
+
+                    <span> Bearing Selection</span>
+
+                    <span> ISO 6336</span>
+
+                    <span> Cost Optimization</span>
+
+                    <span> Localization Projects</span>
+                    </div>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Woosu -->
+
+        <div class="timeline-item right">
+
+            <div class="timeline-content">
+
+                <span class="year">2012 – 2014</span>
+
+                <div class="company-header">
+    <img src="assets/images/woosu.png" alt="woosu Logo">
+    <h3>Woosu Automotive</h3>
+</div>
+
+                <h4>Product Development Engineer</h4>
+
+                <p>
+
+                    Supported complete product development activities
+                    from concept to production.
+
+                </p>
+
+                <ul>
+                    <div class="tech-tags">
+
+                    <span> APQP</span>
+
+                    <span> PPAP</span>
+
+                    <span> FMEA</span>
+
+                    <span> SAP</span>
+
+                    <span> Engineering Change Management</span>
+                    </div>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= ENGINEERING IMPACT ================= -->
+
+<section class="impact" id="impact">
+
+    <div class="section-title">
+
+        <h5>ENGINEERING IMPACT</h5>
+
+        <h2>Turning Engineering Challenges into Business Value</h2>
+
+        <p>
+            Delivering innovative engineering solutions through product development,
+            reliability improvement, structured Root Cause Analysis, and technical leadership.
+        </p>
+
+    </div>
+
+    <div class="impact-grid">
+
+        <!-- Project 1 -->
+        <div class="impact-card">
+
+            <div class="impact-icon">🚛</div>
+
+            <h3>Rear Axle Product Development</h3>
+
+            <h4>Ashok Leyland</h4>
+
+            <p>
+                Leading rear axle development, validation, warranty reduction,
+                and engineering improvements for commercial vehicles.
+            </p>
+
+            <div class="impact-tags">
+
+                <span>RCA</span>
+
+                <span>Validation</span>
+
+                <span>Warranty</span>
+
+                <span>Product Development</span>
+
+            </div>
+
+        </div>
+
+        <!-- Project 2 -->
+
+        <div class="impact-card">
+
+            <div class="impact-icon">🌬</div>
+
+            <h3>Wind Turbine Reliability</h3>
+
+            <h4>Vestas</h4>
+
+            <p>
+
+                Improved fleet reliability through Root Cause Analysis,
+                DFMEA and engineering design improvements.
+
+            </p>
+
+            <div class="impact-tags">
+
+                <span>Hydraulics</span>
+
+                <span>DFMEA</span>
+
+                <span>Reliability</span>
+
+                <span>Fleet RCA</span>
+
+            </div>
+
+        </div>
+
+        <!-- Project 3 -->
+
+        <div class="impact-card">
+
+            <div class="impact-icon">⚙</div>
+
+            <h3>Industrial Gearboxes</h3>
+
+            <h4>Flender</h4>
+
+            <p>
+
+                Designed industrial gearbox solutions using ISO 6336,
+                bearing selection and localization strategies.
+
+            </p>
+
+            <div class="impact-tags">
+
+                <span>Gear Design</span>
+
+                <span>ISO6336</span>
+
+                <span>Bearings</span>
+
+                <span>Localization</span>
+
+            </div>
+
+        </div>
+
+        <!-- Project 4 -->
+
+        <div class="impact-card">
+
+            <div class="impact-icon">🚗</div>
+
+            <h3>Automotive Product Development</h3>
+
+            <h4>Woosu Automotive</h4>
+
+            <p>
+
+                Supported complete product lifecycle through APQP,
+                PPAP, FMEA and engineering change management.
+
+            </p>
+
+            <div class="impact-tags">
+
+                <span>APQP</span>
+
+                <span>PPAP</span>
+
+                <span>FMEA</span>
+
+                <span>SAP</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--================ TECHNICAL EXPERTISE =================-->
+
+<section class="expertise" id="expertise">
+
+    <div class="section-title">
+
+        <h5>TECHNICAL EXPERTISE</h5>
+
+        <h2>Engineering Excellence Built Through Experience</h2>
+
+        <p>
+            A comprehensive blend of engineering knowledge, digital tools,
+            and leadership capabilities developed across Automotive,
+            Renewable Energy, and Industrial Gearbox industries.
+        </p>
+
+    </div>
+
+    <div class="expertise-grid">
+
+        <!-- Engineering -->
+
+        <div class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-gears"></i>
+            </div>
+
+            <h3>Engineering Excellence</h3>
+
+            <div class="skill-tags">
+
+                <span>Product Development</span>
+                <span>Product Design</span>
+
+                <span>Root Cause Analysis</span>
+
+                <span>Reliability Engineering</span>
+
+                <span>DFMEA</span>
+
+                <span>PFMEA</span>
+
+                <span>Vehicle Validation</span>
+
+                <span>Failure Analysis</span>
+
+                <span>Design Verification</span>
+                <span>DFMA</span>
+
+            </div>
+
+        </div>
+
+        <!-- Mechanical -->
+
+        <div class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+
+            <h3>Mechanical Systems</h3>
+
+            <div class="skill-tags">
+
+                <span>Gearboxes</span>
+                <span>WTG - Nacelle & Hub</span>
+                <span>Pict actuation system</span>
+
+                <span>Bearings</span>
+
+                <span>Rear Axles</span>
+
+                <span>Hydraulic Systems</span>
+
+                <span>Power Transmission</span>
+
+                <span>Shaft Design</span>
+
+                <span>Castings</span>
+
+                <span>Forgings</span>
+
+            </div>
+
+        </div>
+
+        <!-- Software -->
+
+        <div class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+
+            <h3>Digital Engineering</h3>
+
+            <div class="skill-tags">
+
+                <span>UGNX</span>
+                
+                <span>Creo</span>
+                <span>CATIA</span>
+                <span>Medusa</span>
+
+                <span>Windchill</span>
+
+                <span>SAP</span>
+
+                <span>ANSYS</span>
+
+                <span>AutoCAD</span>
+
+                <span>Teamcenter</span>
+
+                <span>GD&T</span>
+
+                <span>MS Project</span>
+                <span>JIRA</span>
+                <span>Sharepoint</span>
+
+            </div>
+
+        </div>
+
+        <!-- Leadership -->
+
+        <div class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <h3>Leadership</h3>
+
+            <div class="skill-tags">
+
+                <span>Technical Leadership</span>
+
+                <span>Cross-functional Teams</span>
+
+                <span>Stakeholder Management</span>
+
+                <span>Supplier Development</span>
+
+                <span>Engineering Reviews</span>
+
+                <span>Project Planning</span>
+
+                <span>Continuous Improvement</span>
+
+                <span>Global Collaboration</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--================ ACHIEVEMENTS =================-->
+
+<section class="achievements" id="achievements">
+
+    <div class="section-title">
+
+        <h5>ACHIEVEMENTS & RECOGNITION</h5>
+
+        <h2>Engineering Excellence Through Leadership & Innovation</h2>
+
+        <p>
+            Milestones that reflect my commitment to technical excellence,
+            innovation, continuous improvement and engineering leadership.
+        </p>
+
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h3>13+ Years Experience</h3>
+
+            <p>
+                Successfully delivering engineering solutions across
+                Automotive, Renewable Energy and Industrial Power Transmission.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fa-solid fa-earth-asia"></i>
+
+            <h3>Global Engineering</h3>
+
+            <p>
+                Worked with international engineering teams,
+                customers and suppliers to solve complex technical problems.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fa-solid fa-microchip"></i>
+
+            <h3>Cross-Industry Expertise</h3>
+
+            <p>
+                Product Development, Reliability Engineering,
+                Industrial Gearboxes, Wind Turbines and Commercial Vehicles.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+            <h3>Root Cause Analysis</h3>
+
+            <p>
+                Led structured investigations that transformed field failures
+                into sustainable engineering improvements.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h3>M.Tech - BITS Pilani</h3>
+
+            <p>
+                Strengthened technical and managerial capabilities through
+                advanced postgraduate engineering education.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>Leadership & Mentoring</h3>
+
+            <p>
+                Led engineering reviews, mentored colleagues,
+                and collaborated across multidisciplinary teams.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!--================ EDUCATION =================-->
+
+<section class="education" id="education">
+
+    <div class="section-title">
+
+        <h5>EDUCATION & CERTIFICATIONS</h5>
+
+        <h2>Continuous Learning for Engineering Excellence</h2>
+
+        <p>
+            Building technical expertise through higher education,
+            professional certifications and continuous learning.
+        </p>
+
+    </div>
+
+    <div class="education-timeline">
+
+        <!-- M.Tech -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="education-content">
+
+                <span>2025</span>
+
+                <h3>M.Tech – Design Engineering</h3>
+
+                <h4>BITS Pilani</h4>
+
+                <p>
+            
+                    Strengthened leadership, Design thinking strategy,
+                    operations management and engineering decision-making.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- BE -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                <i class="fa-solid fa-school"></i>
+            </div>
+
+            <div class="education-content">
+
+                <span>2012</span>
+
+                <h3>Bachelor of Engineering</h3>
+
+                <h4>Mechanical Engineering</h4>
+
+                <p>
+                    SACS MAVMM Engineering College,
+                    Madurai.
+                </p>
+
+            </div>
+             </div>
+
+        <!-- DME -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                <i class="fa-solid fa-school"></i>
+            </div>
+
+            <div class="education-content">
+
+                <span>2009</span>
+
+                <h3>Diploma Engineering</h3>
+
+                <h4>Mechanical Engineering</h4>
+
+                <p>
+                    PA Polytechnic College,
+                    Pollachi.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Six Sigma -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                <i class="fa-solid fa-certificate"></i>
+            </div>
+
+            <div class="education-content">
+
+                <span>Certification</span>
+
+                <h3>Six Sigma Green Belt</h3>
+
+                <h4>Continuous Improvement</h4>
+
+                <p>
+                    Structured problem solving,
+                    process capability and quality improvement.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Creo -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                <i class="fa-solid fa-cube"></i>
+            </div>
+
+            <div class="education-content">
+
+                <span>Professional Skill</span>
+
+                <h3>Creo Parametric</h3>
+
+                <h4>3D Product Design</h4>
+
+                <p>
+                    Advanced mechanical design,
+                    assemblies and engineering drawings.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--================ LEADERSHIP PHILOSOPHY =================-->
+
+<section class="philosophy" id="philosophy">
+
+    <div class="section-title">
+
+        <h5>LEADERSHIP PHILOSOPHY</h5>
+
+        <h2>Engineering Beyond Design</h2>
+
+    </div>
+
+    <div class="philosophy-card">
+
+        <i class="fa-solid fa-quote-left"></i>
+
+        <p class="quote">
+
+            Engineering is not merely about designing products.
+            It is about understanding failures, learning from data,
+            empowering teams, and delivering reliable solutions
+            that create lasting value for customers.
+
+        </p>
+
+        <h4>— Jayakumar Nagaraj</h4>
+
+    </div>
+
+    <div class="principles">
+
+        <div class="principle">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Customer First</span>
+        </div>
+
+        <div class="principle">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Reliability by Design</span>
+        </div>
+
+        <div class="principle">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Data-Driven Decisions</span>
+        </div>
+
+        <div class="principle">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Cross-Functional Leadership</span>
+        </div>
+
+        <div class="principle">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Continuous Improvement</span>
+        </div>
+
+        <div class="principle">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Engineering Integrity</span>
+        </div>
+
+    </div>
+
+</section>
+<!--================ FEATURED CASE STUDIES =================-->
+
+<section class="case-studies" id="case-studies">
+
+    <div class="section-title">
+
+        <h5>FEATURED ENGINEERING CASE STUDIES</h5>
+
+        <h2>Engineering Challenges. Structured Thinking. Sustainable Solutions.</h2>
+
+        <p>
+            A selection of representative engineering projects demonstrating
+            technical leadership, structured problem-solving, and product improvement
+            across multiple industries.
+        </p>
+
+    </div>
+
+    <div class="case-grid">
+
+        <!-- Case Study 1 -->
+        <div class="case-card">
+
+            <h3>Rear Axle Product Development</h3>
+
+            <h4>Ashok Leyland</h4>
+
+            <p>
+                Led engineering activities supporting rear axle product development,
+                validation planning, cross-functional collaboration, and continuous
+                product improvement for commercial vehicles.
+            </p>
+
+            <div class="case-tags">
+
+                <span>Product Development</span>
+
+                <span>Validation</span>
+
+                <span>RCA</span>
+
+                <span>GD&T</span>
+
+            </div>
+
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-card">
+
+            <h3>Wind Turbine Reliability Improvement</h3>
+
+            <h4>Vestas</h4>
+
+            <p>
+
+                Investigated fleet field issues using structured Root Cause Analysis,
+                DFMEA and engineering improvements to enhance product reliability.
+
+            </p>
+
+            <div class="case-tags">
+
+                <span>Fleet RCA</span>
+
+                <span>Reliability</span>
+
+                <span>DFMEA</span>
+
+                <span>Hydraulics</span>
+
+            </div>
+
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="case-card">
+
+            <h3>Industrial Gearbox Design</h3>
+
+            <h4>Flender</h4>
+
+            <p>
+
+                Developed industrial gearbox solutions through analytical design,
+                bearing selection, localization and engineering optimization.
+
+            </p>
+
+            <div class="case-tags">
+
+                <span>ISO6336</span>
+
+                <span>Gear Design</span>
+
+                <span>Bearings</span>
+
+                <span>Localization</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--================ WHY HIRE ME =================-->
+
+<section class="why-hire" id="why-hire">
+
+    <div class="section-title">
+
+        <h5>WHY COMPANIES HIRE ME</h5>
+
+        <h2>Delivering Engineering Excellence Through Leadership</h2>
+
+        <p>
+            Combining technical expertise, structured problem-solving,
+            and leadership to deliver reliable products and business value.
+        </p>
+
+    </div>
+
+    <div class="hire-grid">
+
+        <div class="hire-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Product Development</h3>
+            <p>Driving products from concept through validation to successful launch.</p>
+        </div>
+
+        <div class="hire-card">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <h3>Root Cause Analysis</h3>
+            <p>Leading structured investigations using 8D, DFMEA, and data-driven methods.</p>
+        </div>
+
+        <div class="hire-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Reliability Engineering</h3>
+            <p>Improving durability, reliability, and long-term product performance.</p>
+        </div>
+
+        <div class="hire-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>Leadership</h3>
+            <p>Leading cross-functional teams to deliver engineering excellence.</p>
+        </div>
+
+    </div>
+
+</section>
+<!--================ CONTACT =================-->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h5>LET'S CONNECT</h5>
+
+        <h2>Let's Build the Future Together</h2>
+
+        <p>
+
+            Whether you're looking for an Engineering Leader,
+            Product Development expert, or Reliability Engineering specialist,
+            I'd be delighted to discuss how I can contribute to your organization.
+
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <h3>Email</h3>
+
+            <p>jaikey07@gmail.com</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <h3>Phone</h3>
+
+            <p>+91 97902 18521</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h3>Location</h3>
+
+            <p>Chennai, Tamil Nadu, India</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <i class="fa-brands fa-linkedin"></i>
+
+            <h3>LinkedIn</h3>
+
+            <a href="https://www.linkedin.com/in/jayakumar-nagaraj-6785b455/"
+               target="_blank">
+
+                View My Profile
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="contact-buttons">
+
+        <a href="assets/resume.pdf"
+           class="btn-primary"
+           download>
+
+            Download Resume
+
+        </a>
+
+        <a href="https://www.linkedin.com/in/jayakumar-nagaraj-6785b455/"
+           target="_blank"
+           class="btn-secondary">
+
+            Connect on LinkedIn
+
+        </a>
+
+    </div>
+
+</section>
+<footer>
+
+    <p>
+
+        © 2026 Jayakumar Nagaraj |
+        Engineering Leadership Portfolio
+
+    </p>
+
+    <p>
+
+        Engineering Better Products Through Innovation,
+        Reliability & Leadership.
+
+    </p>
+
+</footer>
+<button id="scrollTop">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<script>
+
+const menu=document.getElementById("menuToggle");
+
+const nav=document.getElementById("navbar");
+
+menu.onclick=function(){
+
+nav.classList.toggle("active");
+
+}
+
+</script>
 </body>
 
 </html>
