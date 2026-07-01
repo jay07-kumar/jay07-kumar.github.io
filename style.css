@@ -1,7 +1,9 @@
 /*==========================================
         DESIGN SYSTEM
 ==========================================*/
-
+html {
+    scroll-behavior: smooth;
+}
 :root{
 
     /* Primary Colors */
